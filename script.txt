@@ -1,0 +1,28 @@
+docker run -i -v C:\Users\redpa\Documents\FlightGearBuild\SceneryCreation\SaoTomePrincipe:/terragear-work/ -t flightgear/terragear:ws20 /bin/bash
+cd  /terragear-work/
+for f in data/SRTM-3/*.hgt; do hgtchop 3 "${f}" "work/SRTM-3"; done
+terrafit work/SRTM-3 -m 50 -x 22500 -e 1
+
+docker run -i -v C:\Users\redpa\Documents\FlightGearBuild\SceneryCreation\SaoTomePrincipe:/terragear-work/ -t flightgear/terragear:latest /bin/bash
+cd  /terragear-work/
+ogr-decode --continue-on-errors --area-type Sand work/Sand data/osm_beach.shp
+ogr-decode --continue-on-errors --area-type Cemetery work/Cemetery data/osm_cemetery.shp
+ogr-decode --continue-on-errors --area-type DryCrop work/DryCrop data/osm_farm.shp
+ogr-decode --continue-on-errors --area-type MixedForest work/RainForest data/osm_forest.shp
+ogr-decode --continue-on-errors --area-type Grassland work/Grassland data/osm_grassland.shp
+ogr-decode --continue-on-errors --area-type Industrial work/Industrial data/osm_industrial.shp
+ogr-decode --continue-on-errors --area-type Lake work/Lake data/osm_lake.shp
+ogr-decode --continue-on-errors --area-type Default work/Default data/osm_landmass.shp
+ogr-decode --line-width 10 --area-type Road work/Road data/osm_major_road.shp
+ogr-decode --line-width 8 --area-type Road work/Road data/osm_minor_road.shp
+ogr-decode --continue-on-errors --area-type Orchard work/Orchard data/osm_orchard.shp
+ogr-decode --continue-on-errors --area-type OpenMining work/OpenMining data/osm_quarry.shp
+ogr-decode --continue-on-errors --area-type Town work/Town data/osm_residential.shp
+ogr-decode --line-width 9 --area-type Stream work/Stream data/osm_river.shp 
+ogr-decode --continue-on-errors --area-type Scrub work/Scrub data/osm_scrub.shp
+ogr-decode --line-width 7 --area-type Stream work/Stream data/osm_stream.shp
+ogr-decode --continue-on-errors --area-type Marsh work/Marsh data/osm_wetland.shp
+
+genapts850 --input=apt.dat --work=work
+
+tg-construct --priorities=/usr/local/share/TerraGear/default_priorities.txt --min-lat=-1 --max-lat=2 --min-lon=6 --max-lon=8 --work-dir=work --output-dir=output/Terrain AirportArea AirportObj Cemetery Default DryCrop Grassland Industrial Lake Marsh OpenMining Orchard MixedForest Road Sand Scrub SRTM-3 Stream Town
