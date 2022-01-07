@@ -28,7 +28,7 @@ OBJECT_SHARED Models/Airport/FGRefuel02.xml 6.71362 0.37481 13.80 170.83
 OBJECT_SHARED Models/Airport/HorizTanks2.ac 6.71377 0.37480 11.58 350.182
 OBJECT_SHARED Models/Airport/HorizTanks2.ac 6.71375 0.37470 11.42 350.605
 OBJECT_SHARED Models/Power/transformer.ac 6.71384 0.37461 14.22 77.301
-OBJECT_SHARED Models/Trees/luggage-cart-HD.ac 6.71312 0.37498 14.05 0
+OBJECT_SHARED Models/Airport/Vehicle/chariot.xml 6.71312 0.37498 14.05 0
 OBJECT_SHARED Models/Trees/deciduous-tree2.xml 6.71297 0.37341 14.01 85.7111
 OBJECT_SHARED Models/Trees/deciduous-tree2.xml 6.71294 0.37349 10.74 104.042
 OBJECT_SHARED Models/Trees/deciduous-tree2.xml 6.71299 0.37354 10.88 43.2648

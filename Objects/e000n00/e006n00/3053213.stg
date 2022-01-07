@@ -25,7 +25,7 @@ OBJECT_SHARED Models/Power/transformer.ac 6.71175 0.37523 11.20 347.475
 OBJECT_SHARED Models/Airport/EDWB_Firestation.xml 6.71152 0.37599 13.41 346.584
 OBJECT_SHARED Models/Airport/office32x25n.ac 6.71149 0.37522 13.61 76.5306
 OBJECT_SHARED Models/Airport/container6.ac 6.71058 0.37635 13.61 0
-OBJECT_SHARED Models/Airport/chariot.xml 6.71276 0.37502 12.14 347.974
+OBJECT_SHARED Models/Airport/Vehicle/chariot.xml 6.71276 0.37502 12.14 347.974
 OBJECT_SHARED Models/Airport/cargocontainergroup1.ac 6.71058 0.37655 12.48 75.4704
 OBJECT_SHARED Models/Airport/cargoim.xml 6.71051 0.37642 13.97 0
 OBJECT_SHARED Models/Airport/cargoim.xml 6.71049 0.37636 14.06 0
